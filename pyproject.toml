@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["py-oprun*"]
+
+[project]
+name = "py-oprun"
+version = "0.0.1"
+authors = [
+  { name="txello", email="txello7@proton.me" },
+]
+description = "Python connector for oprun"
+readme = "README.md"
+requires-python = ">=3.10"
+
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: System :: Networking",
+    "Topic :: Utilities",
+
+    "Framework :: AsyncIO",
+
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Documentation = "https://txello.github.io/py-oprun"
+Homepage = "https://github.com/txello/py-oprun"
+Issues = "https://github.com/txello/py-oprun/issues"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",   # basic pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # errors from pyflakes (important!)
+    "B",   # flake8-bugbear
+    "I",   # isort (imports)
+    "UP",  # pyupgrade
+]
+
+ignore = ["E501", "UP045", "UP006", "UP007", "UP035"]
